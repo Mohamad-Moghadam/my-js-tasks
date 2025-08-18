@@ -1,16 +1,16 @@
 function flattening(array) {
     result = []
     array.forEach(element => {
-        while (typeof array[element] === Array) {
-            array[element].forEach(element => {
-                result.push(element)
-            });
-        };
-        if (typeof array[element] !== Array) {
-            array.forEach(element => {
-                result.push(element)
-            });
+        if (Array.isArray(array[element])) {
+            while (typeof array[element] === Array) {
+                array[element].forEach(element => {
+                    result.push(element)
+                });
+            };
         }
+        else {
+            result.push(element)
+        };
     });
     return result
 }
