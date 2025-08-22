@@ -4,10 +4,11 @@ function transList(array) {
 
     array.forEach(element => {
         let elementLen = element.length
-        final.push(obj[elementLen] = element)
+        obj[elementLen] = element
+        final.push({[elementLen]: element})
     });
 
-    return obj
+    return final
 }
 
 let array = ["hi", "I've been", "waiting", "for", "you", "to skeem", "my code"]
